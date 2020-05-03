@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.Js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- Event Binding -->
+        <button @click="callLog('Deneme')">Call Log</button>
+        <button v-on:click="arttir"> Arttir </button>
+        <button v-on:click="azalt"> Azalt </button>
+        <p> {{sayi}} </p>
+
+        <input @keypress="keyp($event)">
+        <input @keypress.enter="keyp($event)">
+
+    </div>
+
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                sayi: 0
+            },
+            methods: {
+                arttir() {
+                    this.sayi++;
+                },
+                azalt() {
+                    this.sayi--;
+                },
+                callLog(val) {
+                    console.log(val)
+                },
+                keyp(e) {
+                    if (e.keyCode == 13) {
+                        this.sayi += parseInt(e.target.value)
+                    }
+                },
+                keyp2(e) {
+                        this.sayi += parseInt(e.target.value)                    
+                }
+                
+            },
+        });
+    </script>
+</body>
+
+</html>

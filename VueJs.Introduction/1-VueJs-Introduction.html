@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.Js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <!-- String Interpolation -->
+        <h3> {{title}} </h3>
+        <button> {{buttonTitle}} </button>        
+        <p> {{paragraf}} </p>
+
+        <!-- V-Text -->
+        <p v-text="paragraf"></p>
+
+        <!-- V-Bind -->
+        <a :href="link" v-bind:data-id="dataId">VideoSınıf</a>
+
+        <!-- V-Html -->
+        <p v-html="details"></p>
+
+        
+    </div>
+
+
+    <script>
+        new Vue({
+            el:"#app",
+            data : {
+                title:"Test Başlık",
+                buttonTitle:"Tıkla Gelsin",
+                paragraf:"Lorem Ipsum dolor sit amet",
+                link:"http://www.google.com.tr",
+                dataId:"1",
+                details:"<b> Bu bir haber detayıdır</b>"
+            },
+        });
+    </script>
+</body>
+</html>

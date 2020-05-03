@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #558866;
+            background-color: cyan;
+            margin: 10px;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="box" :class="className"> </div>
+        <div class="box" :class="className"></div>
+        <div class="box" :style="{'background-color' : 'black'}"></div>
+        <button @click="showBlue=!showBlue">Ekle/Kaldır</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                showBlue: false
+            },
+            methods: {
+
+            },
+            computed: {
+                className() {
+                    return{
+                        'blue': this.showBlue
+                    };
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
